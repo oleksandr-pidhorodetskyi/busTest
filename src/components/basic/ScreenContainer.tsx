@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import {horizontalScale, verticalScale} from '../../utils/metrics.ts';
-import {colors} from '../../constants/colors.ts';
+import {COLORS} from '../../constants/colors.ts';
 
 interface ScreenContainerProps {
   children: React.ReactNode;
@@ -30,7 +30,7 @@ const ScreenContainer: React.FC<ScreenContainerProps> = ({
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: colors.mainBg,
+    backgroundColor: COLORS.mainBg,
     paddingHorizontal: horizontalScale(10),
     paddingVertical: verticalScale(10),
     minHeight: '100%',

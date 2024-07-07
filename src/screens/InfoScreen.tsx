@@ -2,14 +2,14 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import ScreenContainer from '../components/basic/ScreenContainer.tsx';
 
-const Home = () => {
+const InfoScreen = () => {
   return (
     <ScreenContainer>
       <View>
-        <Text>home</Text>
+        <Text>InfoScreen</Text>
       </View>
     </ScreenContainer>
   );
 };
 
-export default Home;
+export default InfoScreen;
