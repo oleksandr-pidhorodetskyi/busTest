@@ -9,6 +9,7 @@ import SeatStatusExamplesContainer from '../components/screenComponents/SeatsScr
 import {SeatType} from '../store/buses/types.ts';
 import {horizontalScale, verticalScale} from '../utils/metrics.ts';
 import SeatList from '../components/screenComponents/SeatsScreen/SeatsList.tsx';
+import ContentContainer from '../components/basic/ContentContainer.tsx';
 
 const SeatsScreen = () => {
   const navigation = useNavigation<any>();
@@ -33,16 +34,18 @@ const SeatsScreen = () => {
           }}
           rightBottomContainer={<SeatStatusExamplesContainer />}
         />
-        <View style={styles.columnsContainer}>
-          <SeatList
-            data={seatsStartingFromA}
-            contentContainerStyleStyle={styles.leftColumn}
-          />
-          <SeatList
-            data={seatsStartingFromB}
-            contentContainerStyleStyle={styles.rightColumn}
-          />
-        </View>
+        <ContentContainer>
+          <View style={styles.columnsContainer}>
+            <SeatList
+              data={seatsStartingFromA}
+              contentContainerStyleStyle={styles.leftColumn}
+            />
+            <SeatList
+              data={seatsStartingFromB}
+              contentContainerStyleStyle={styles.rightColumn}
+            />
+          </View>
+        </ContentContainer>
       </View>
     </ScreenContainer>
   );

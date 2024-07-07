@@ -31,14 +31,11 @@ const ScreenContainer: React.FC<ScreenContainerProps> = ({
 const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: COLORS.mainBg,
-    paddingHorizontal: horizontalScale(10),
     paddingVertical: verticalScale(10),
     minHeight: '100%',
   },
   contentContainer: {
-    width: '80%',
     marginTop: horizontalScale(10),
-    marginHorizontal: 'auto',
     backgroundColor: COLORS.mainBg,
   },
 });

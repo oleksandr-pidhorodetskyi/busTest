@@ -11,6 +11,7 @@ import {setAllBuses, setSelectedBus} from '../store/buses/slice.ts';
 import {selectAllBuses} from '../store/buses/selectors.ts';
 import {NavigationRoutes} from '../navigation/types.ts';
 import {useNavigation} from '@react-navigation/native';
+import ContentContainer from '../components/basic/ContentContainer.tsx';
 
 const busesData: BusType[] = data as BusType[];
 
@@ -30,16 +31,18 @@ const HomeScreen: React.FC = () => {
 
   return (
     <ScreenContainer>
-      <Title customStyles={styles.title}>Select your route</Title>
-      <FlatList
-        data={allBuses}
-        renderItem={({item, index}: {item: BusType; index: number}) => (
-          <BusCard data={item} onPress={() => handleSelectBus(item)} />
-        )}
-        keyExtractor={item => item.id}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.contentContainer}
-      />
+      <ContentContainer>
+        <Title customStyles={styles.title}>Select your route</Title>
+        <FlatList
+          data={allBuses}
+          renderItem={({item, index}: {item: BusType; index: number}) => (
+            <BusCard data={item} onPress={() => handleSelectBus(item)} />
+          )}
+          keyExtractor={item => item.id}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.contentContainer}
+        />
+      </ContentContainer>
     </ScreenContainer>
   );
 };

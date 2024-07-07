@@ -31,7 +31,7 @@ const MapScreen = () => {
         }}
         showsUserLocation
         showsMyLocationButton
-        style={{width: '100%', height: '50%'}}
+        style={{width: '100%', height: '82%'}}
         onMapReady={() => {
           if (Platform.OS === 'android') {
             PermissionsAndroid.request(

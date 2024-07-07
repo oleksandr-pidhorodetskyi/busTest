@@ -32,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   return (
     <View style={[styles.container, customStyles]} {...rest}>
-      <Title>{data.title}</Title>
+      <Title customStyles={styles.title}>{data.title}</Title>
       <View style={styles.bottomContainer}>
         <View style={styles.header}>
           <Text style={styles.idText}>
@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingRight: verticalScale(18),
+    paddingRight: horizontalScale(18),
+    marginBottom: verticalScale(18),
   },
   header: {
     paddingVertical: verticalScale(5),
@@ -80,7 +81,9 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     fontSize: moderateScale(14),
   },
-
+  title: {
+    marginLeft: horizontalScale(10),
+  },
   speedContainer: {
     flexDirection: 'row',
     alignItems: 'center',
