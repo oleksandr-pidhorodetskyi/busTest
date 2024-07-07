@@ -3,10 +3,10 @@ import MapScreen from '../screens/MapScreen.tsx';
 import InfoScreen from '../screens/InfoScreen.tsx';
 import React from 'react';
 import BusNavigator from './BusNavigator.tsx';
-import {Image, StyleSheet} from 'react-native';
+import {Image, Platform, StyleSheet} from 'react-native';
 import ICONS from '../assets/icons.ts';
-import {verticalScale} from '../utils/metrics.ts';
 import {NavigationRoutes} from './types.ts';
+import {verticalScale} from '../utils/metrics.ts';
 
 const Tab = createBottomTabNavigator();
 
@@ -48,8 +48,10 @@ export const TabNavigator = () => {
 };
 const styles = StyleSheet.create({
   tabBar: {
-    height: verticalScale(90),
-    paddingTop: verticalScale(20),
+    height: verticalScale(80),
+    paddingTop: Platform.OS === 'ios' ? verticalScale(20) : 0,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   icon: {
     height: 30,
