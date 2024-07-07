@@ -36,10 +36,10 @@ const styles = StyleSheet.create({
     minHeight: '100%',
   },
   contentContainer: {
-    width: '90%',
+    width: '80%',
     marginTop: horizontalScale(10),
     marginHorizontal: 'auto',
-    rowGap: verticalScale(10),
+    backgroundColor: COLORS.mainBg,
   },
 });
 

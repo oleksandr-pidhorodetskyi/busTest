@@ -3,26 +3,37 @@ import {BusType} from './types.ts';
 
 interface BusesState {
   allBuses: BusType[];
+  selectedBus: BusType;
   isLoading: boolean;
 }
+const initialSelectedBus: BusType = {
+  id: '',
+  from: '',
+  to: '',
+  seats: [],
+};
 
 const initialState: BusesState = {
   allBuses: [],
+  selectedBus: initialSelectedBus,
   isLoading: false,
 };
 
-export const slice = createSlice({
-  name: 'characters',
+export const busesSlice = createSlice({
+  name: 'buses',
   initialState,
   reducers: {
-    startLoading(state) {
-      state.isLoading = true;
+    setAllBuses(state, {payload}: {payload: BusType[]}) {
+      state.allBuses = payload;
     },
-    stopLoading(state) {
+    setSelectedBus(state, {payload}: {payload: BusType}) {
+      state.selectedBus = payload;
+    },
+    stopLoading(state, payload) {
       state.isLoading = false;
     },
   },
 });
 
-export const {startLoading, stopLoading} = slice.actions;
-export default slice.reducer;
+export const {setAllBuses, setSelectedBus, stopLoading} = busesSlice.actions;
+export default busesSlice.reducer;
