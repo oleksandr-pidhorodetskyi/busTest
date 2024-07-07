@@ -11,7 +11,7 @@ export type SeatType = {
   status: SeatStatus;
 };
 
-enum SeatStatus {
-  'reserved',
-  'available',
+export enum SeatStatus {
+  'reserved' = 'reserved',
+  'available' = 'available',
 }
