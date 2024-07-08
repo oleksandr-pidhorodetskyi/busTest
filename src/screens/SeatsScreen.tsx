@@ -1,8 +1,7 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import ScreenContainer from '../components/basic/ScreenContainer.tsx';
-import {useNavigation} from '@react-navigation/native';
-import {useAppDispatch, useAppSelector} from '../hooks/useRedux.ts';
+import {useAppSelector} from '../hooks/useRedux.ts';
 import {selectedBus} from '../store/buses/selectors.ts';
 import Header from '../components/basic/Header.tsx';
 import SeatStatusExamplesContainer from '../components/screenComponents/SeatsScreen/SeatStatusExamplesContainer.tsx';
@@ -12,8 +11,6 @@ import SeatList from '../components/screenComponents/SeatsScreen/SeatsList.tsx';
 import ContentContainer from '../components/basic/ContentContainer.tsx';
 
 const SeatsScreen = () => {
-  const navigation = useNavigation<any>();
-  const dispatch = useAppDispatch();
   const selectedBusData = useAppSelector(selectedBus);
   const busDirection = `${selectedBusData.from} - ${selectedBusData.to}`;
   const seatsStartingFromA: SeatType[] = selectedBusData.seats.filter(seat =>
